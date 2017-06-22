@@ -12,7 +12,7 @@ RUN cd /home/florincoin && \
     ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts && \
     git clone https://github.com/florincoin/florincoin.git florincoind && \
     cd /home/florincoin/florincoind && \
-    git checkout tags/v0.10.4.4
+    git checkout tags/v0.10.4.4 && \
     ./autogen.sh && \
     ./configure && \
     make && \
