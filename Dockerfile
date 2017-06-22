@@ -15,8 +15,7 @@ RUN cd /home/florincoin && \
     git checkout tags/v0.10.4.4 && \
     ./autogen.sh && \
     ./configure && \
-    make && \
-    make install
+    make
     
 EXPOSE 7312 7313
 
