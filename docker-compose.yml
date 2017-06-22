@@ -1,0 +1,8 @@
+---
+daemon:
+  image: quay.io/kwiksand/florincoind:latest
+  ports:
+   - "7312:7312"
+   - "7313:7313"
+  volumes:
+   - /media/crypto/florincoin:/home/florincoin/.florincoin
