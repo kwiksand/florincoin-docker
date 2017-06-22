@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 cd /home/florincoin/florincoind
+FLORINCOIN_DATA=/home/florincoin/.florincoin
 
 if [ $(echo "$1" | cut -c1) = "-" ]; then
   echo "$0: assuming arguments for florincoind"
@@ -9,13 +10,13 @@ if [ $(echo "$1" | cut -c1) = "-" ]; then
 fi
 
 if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "florincoind" ]; then
-  mkdir -p "$GAMECOIN_DATA"
-  chmod 700 "$GAMECOIN_DATA"
-  chown -R florincoin "$GAMECOIN_DATA"
+  mkdir -p "$FLORINCOIN_DATA"
+  chmod 700 "$FLORINCOIN_DATA"
+  chown -R florincoin "$FLORINCOIN_DATA"
 
-  echo "$0: setting data directory to $GAMECOIN_DATA"
+  echo "$0: setting data directory to $FLORINCOIN_DATA"
 
-  set -- "$@" -datadir="$GAMECOIN_DATA"
+  set -- "$@" -datadir="$FLORINCOIN_DATA"
 fi
 
 if [ "$1" = "florincoind" ] || [ "$1" = "florincoin-cli" ] || [ "$1" = "florincoin-tx" ]; then
